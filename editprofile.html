@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>Edit Profile - GearUpGarage</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin: 0;
+        }
+
+        /* Container */
+        .edit-profile-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .edit-profile-container h2 {
+            margin-bottom: 1.5rem;
+            color: #007bff;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-buttons button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-buttons .save-btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .form-buttons .save-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .form-buttons .cancel-btn {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+        .form-buttons .cancel-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="assets/img/GearUpGarage_Logo-removebg.png" alt="Website Logo">
+        <a href="profile.html" style="text-decoration:none;color:#111;" ><b>Home</b></a>
+        <h1>Edit Profile</h1>
+    </header>
+
+    <!-- Edit Profile Container -->
+    <div class="edit-profile-container">
+        <h2>Edit Your Profile</h2>
+        <form id="edit-profile-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" value="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" value="johndoe@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" value="+91 9876543210" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" value="123 Street, City, State" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" value="********" required>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="save-btn" onclick="saveProfile()">Save Changes</button>
+                <button type="button" class="cancel-btn" onclick="cancelChanges()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function saveProfile() {
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const password = document.getElementById('password').value;
+
+            // Simple validation
+            if (!name || !email || !phone || !address || !password) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Simulate saving to a database
+            alert(`Profile Updated Successfully:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}`);
+        }
+
+        function cancelChanges() {
+            // Reset form to original values
+            const originalData = {
+                name: "John Doe",
+                email: "johndoe@example.com",
+                phone: "+91 9876543210",
+                address: "123 Street, City, State",
+                password: "********"
+            };
+
+            document.getElementById('name').value = originalData.name;
+            document.getElementById('email').value = originalData.email;
+            document.getElementById('phone').value = originalData.phone;
+            document.getElementById('address').value = originalData.address;
+            document.getElementById('password').value = originalData.password;
+
+            alert('Changes have been canceled.');
+        }
+    </script>
+</body>
+</html>

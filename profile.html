@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>Profile - GearUpGarage</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin: 0;
+        }
+
+        .profile-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .profile-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #007bff;
+        }
+
+        .profile-header .details {
+            flex-grow: 1;
+            margin-left: 1.5rem;
+        }
+
+        .profile-header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .profile-header p {
+            margin: 0.5rem 0 0;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background: #f8f9fa;
+            padding: 1rem 0;
+        }
+
+        .tabs button {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            color: #333;
+        }
+
+        .tabs button.active {
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 30px;
+        }
+
+        .tab-content {
+            padding: 2rem;
+        }
+
+        .tab-section {
+            display: none;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 20px;
+            height: 15px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            width: 70%;
+            background: #007bff;
+            border-radius: 20px;
+        }
+
+        .recent-activity {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .recent-activity li {
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .recent-activity li:last-child {
+            border-bottom: none;
+        }
+
+        .settings-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .settings-group div {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .settings-group input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button.save-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        button.save-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+       
+        <img src="assets/img/GearUpGarage_Logo-removebg.png" alt="Website Logo">
+        <a href="dashboad.html" style="text-decoration:none;color:#111;" ><b>Home</b></a>
+        <h1>My Profile</h1>
+    </header>
+
+    <!-- Profile Container -->
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <img src="45.jpg" alt="User Avatar">
+            <div class="details">
+                <h1>John Doe</h1>
+                <p>Email: johndoe@example.com</p>
+                <p>Member Since: January 2023</p>
+            </div>
+            <button class="save-btn"><a href="editprofile.html" style="text-decoration:none;color:#fff;">Edit Profile</a></button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="active" data-tab="overview">Overview</button>
+            <button data-tab="activity">Recent Activity</button>
+            <button data-tab="settings">Settings</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Overview Section -->
+            <div class="tab-section active" id="overview">
+                <h2>Account Completion</h2>
+                <p>Complete your profile for a better experience:</p>
+                <div class="progress-bar">
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Recent Activity Section -->
+            <div class="tab-section" id="activity">
+                <h2>Recent Activity</h2>
+                <ul class="recent-activity">
+                    <li>Purchased "Car Headlights" on January 15, 2025</li>
+                    <li>Updated profile picture</li>
+                    <li>Reviewed "Suzuki Steering Wheel"</li>
+                </ul>
+            </div>
+
+            <!-- Settings Section -->
+            <div class="tab-section" id="settings">
+                <h2>Account Settings</h2>
+                <div class="settings-group">
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" value="johndoe@example.com">
+                    </div>
+                    <div>
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" value="+91 9876543210">
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" value="********">
+                    </div>
+                </div>
+                <button class="save-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tabs button');
+        const tabSections = document.querySelectorAll('.tab-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Deactivate all tabs and sections
+                tabs.forEach(t => t.classList.remove('active'));
+                tabSections.forEach(section => section.classList.remove('active'));
+
+                // Activate the clicked tab and corresponding section
+                tab.classList.add('active');
+                document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

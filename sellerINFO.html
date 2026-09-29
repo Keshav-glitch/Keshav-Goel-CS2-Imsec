@@ -1,0 +1,236 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GearupGarage Logo-->
+    <link rel="shortcut icon" href="assets/img/GearUpGarage_Logo-removebg.png" type="image/x-icon" >
+    <!-- BOXICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- SWIPER CSS --> 
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Dashboard container */
+        .dashboard {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        /* Card styles */
+        .card {
+            background: #fff;
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+        .card h2 {
+            font-size: 1.5rem;
+            color: #444;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .card .info p {
+            margin: 10px 0;
+        }
+        
+        .card .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .card .qr-section img {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        /* Footer styles */
+        .footer {
+            text-align: center;
+            background: #4a90e2;
+            color: #fff;
+            padding: 10px;
+        }
+        
+                
+            </style>
+    <title>GearUpGarage</title>
+</head>
+<body>
+    <!--HEADER-->          
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img alt="abc" src="assets/img/GearUpGarage_Logo-removebg.png" height="10px" width="100px">
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="dashboad.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="RearBumper.html" class="nav__link">Buy & Sell</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#seller" class="nav__link active-link" >Seller Info</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x' ></i>
+                </div>
+            </div>
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class='bx bx-moon change-theme' id="theme-button"></i>
+                <div class="nav__shop" id="cart-shop">
+                    <i class='bx bx-shopping-bag' ></i>
+                </div>
+                <div class="nav__shop">
+                </div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt' ></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--CART-->
+    <div class="cart" id="cart">
+        <i class='bx bx-x cart__close' id="cart-close"></i>
+        <h2 class="cart__title-center">My Cart</h2>
+        <div class="cart__container">
+            <article class="cart__card">
+                <div class="cart__box">
+                    <img src="assets/img/onelap.jpg" alt="" class="cart__img">
+                </div>
+                <div class="cart__details">
+                    <h3 class="cart__title">ONE LAP GPS</h3>
+                    <span class="cart__price">Rs.1499</span>
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box">
+                                <i class='bx bx-minus' onclick="handleMinus(this)"></i>
+                            </span>
+                            <span class="cart__amount-number">1</span>
+                            <span class="cart__amount-box">
+                                <i class='bx bx-plus' onclick="handlePlus(this)" ></i>
+                            </span>
+                        </div>
+                        <i class='bx bx-trash-alt cart__amount-trash' onclick="handleDelete(this)"></i>
+                    </div>
+                </div>
+            </article>
+            <article class="cart__card">
+                <div class="cart__box">
+                    <img src="assets/img/headlight (2).jpg" alt="" class="cart__img">
+                </div>
+                <div class="cart__details">
+                    <h3 class="cart__title">BREZZA FOG LAMP</h3>
+                    <span class="cart__price">Rs.6999</span>
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box">
+                                <i class='bx bx-minus' onclick="handleMinus(this)" ></i>
+                            </span>
+                            <span class="cart__amount-number">1</span>
+                            <span class="cart__amount-box">
+                                <i class='bx bx-plus' onclick="handlePlus(this)" ></i>
+                            </span>
+                        </div>
+                        <i class='bx bx-trash-alt cart__amount-trash' onclick="handleDelete(this)"></i>
+                    </div>
+                </div>
+            </article>
+            <article class="cart__card">
+                <div class="cart__box">
+                    <img src="assets/img/Infotenment System.jpg" alt="" class="cart__img">
+                </div>
+                <div class="cart__details">
+                    <h3 class="cart__title">INFOTENMENT<h3>
+                    <span class="cart__price">Rs.6599</span>
+                    <div class="cart__amount">
+                        <div class="cart__amount-content">
+                            <span class="cart__amount-box">
+                                <i class='bx bx-minus' onclick="handleMinus(this)"></i>
+                            </span>
+                            <span class="cart__amount-number">1</span>
+                            <span class="cart__amount-box">
+                                <i class='bx bx-plus' onclick="handlePlus(this)"></i>
+                            </span>
+                        </div>
+                        <i class='bx bx-trash-alt cart__amount-trash' onclick="handleDelete(this)"></i>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="cart__prices">
+            <span class="cart__prices-item">3 items</span>
+            <span class="cart__prices-total">Rs.15097</span>
+        </div>
+    </div>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+
+    <!-- DASHBOARD -->
+    <div class="dashboard">
+        <!-- Seller Information Card -->
+<div class="card">
+    <h2>Seller Information</h2>
+    <div class="info">
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <!-- Seller Image -->
+            <div>
+                <img src="45.jpg" alt="Seller Image" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 2px solid #ddd;">
+            </div>
+            <!-- Seller Details -->
+            <div>
+                <p><strong>Seller Name:</strong> John Doe</p>
+                <p><strong>Contact Number:</strong> +1 234 567 8901</p>
+                <p><strong>Email Address:</strong> johndoe@example.com</p>
+                <p><strong>Address:</strong> 123 Market Street, Cityville, ST 45678</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- QR Code Section -->
+        <div class="card">
+            <h2>QR Code</h2>
+            <div class="qr-section">
+                <p>Scan the QR code below for more details:</p>
+                <img src="qr.jpg" alt="QR Code">
+            </div>
+        </div>
+    </div>
+<!-- SWIPER JS -->
+<script src="assets/js/swiper-bundle.min.js"></script>
+<!-- MAIN JS -->
+<script src="assets/js/main.js"></script>
+    <!-- FOOTER -->
+    <footer class="footer">
+        © 2025 GearUpGarage. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

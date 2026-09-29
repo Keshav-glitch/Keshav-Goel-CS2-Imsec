@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Sign Up</title>
+    <style>
+      /* Your existing styles remain the same */
+    </style>
+  </head>
+  <body>
+    <section class="container forms">
+        <div class="form signup">
+            <div class="form-content">
+                <header>SIGN UP</header>
+                <script>
+                    function validate() {
+                      var uname = document.reg_form.usname.value;
+                      var pass = document.reg_form.pwd.value;
+                      var cpass = document.reg_form.cpwd.value;
+                      var pattern = /^[a-zA-Z0-9._%+-]+@veltech\.edu\.in$/;
+                  
+                      if (uname.trim() === "") {
+                        alert("Email required");
+                        return false;
+                      }
+                      if (!pattern.test(uname)) {
+                        alert("Only Veltech Students can register using @veltech.edu.in");
+                        return false;
+                      }
+
+                      if (pass.trim() === "") {
+                        alert("Password required");
+                        return false;
+                      }
+
+                      if (pass.length < 8) {
+                        alert("Password must contain at least 8 characters");
+                        return false;
+                      }
+
+                      if (pass !== cpass) {
+                        alert("Passwords do not match");
+                        return false;
+                      }
+
+                      return true;
+                    }
+                </script>
+                <form name="reg_form" onsubmit="return validate()" method="POST" action="register_user.php">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" name="usname" class="input" required>
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Create Password" name="pwd" class="password" required>
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Confirm Password" name="cpwd" class="password" required>
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+                    <div class="field button-field">
+                        <button type="submit">Signup</button>
+                    </div>
+                </form>
+                <div class="form-link">
+                    <span>Already have an account? <a href="login.html" class="link login-link">Login</a></span>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="#" alt="" class="google-img">
+                    <span>Login with Google</span>
+                </a>
+            </div>
+        </div>
+    </section>
+  </body>
+</html>

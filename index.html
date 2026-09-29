@@ -1,0 +1,465 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- GearupGarage Logo-->
+        <link rel="shortcut icon" href="assets/img/GearUpGarage_Logo-removebg.png" type="image/x-icon" >
+        <!-- BOXICONS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!-- SWIPER CSS --> 
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!--CSS-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <title>GearUpGarage</title>
+    </head>
+    <body>
+        <!--HEADER-->          
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <img alt="abc" src="assets/img/GearUpGarage_Logo-removebg.png" height="10px" width="100px">
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#featured" class="nav__link">Featured</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#products" class="nav__link">Products</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="RearBumper.html" class="nav__link">Buy & Sell</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#new" class="nav__link" >New</a>
+                        </li>
+                    </ul>
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x' ></i>
+                    </div>
+                </div>
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class='bx bx-moon change-theme' id="theme-button"></i>
+                    <div class="nav__shop" id="cart-shop">
+                        <i class='bx bx-shopping-bag' ></i>
+                    </div>
+                    <div class="nav__shop">
+                        <a href="login.html">Login</a>
+                    </div>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-grid-alt' ></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--CART-->
+        <div class="cart" id="cart">
+            <i class='bx bx-x cart__close' id="cart-close"></i>
+            <h2 class="cart__title-center">My Cart</h2>
+            <div class="cart__container">
+                <article class="cart__card">
+                    <div class="cart__box">
+                        <img src="assets/img/onelap.jpg" alt="" class="cart__img">
+                    </div>
+                    <div class="cart__details">
+                        <h3 class="cart__title">ONE LAP GPS</h3>
+                        <span class="cart__price">Rs.1499</span>
+                        <div class="cart__amount">
+                            <div class="cart__amount-content">
+                                <span class="cart__amount-box">
+                                    <i class='bx bx-minus' onclick="handleMinus(this)"></i>
+                                </span>
+                                <span class="cart__amount-number">1</span>
+                                <span class="cart__amount-box">
+                                    <i class='bx bx-plus' onclick="handlePlus(this)" ></i>
+                                </span>
+                            </div>
+                            <i class='bx bx-trash-alt cart__amount-trash' onclick="handleDelete(this)"></i>
+                        </div>
+                    </div>
+                </article>
+                <article class="cart__card">
+                    <div class="cart__box">
+                        <img src="assets/img/headlight (2).jpg" alt="" class="cart__img">
+                    </div>
+                    <div class="cart__details">
+                        <h3 class="cart__title">BREZZA FOG LAMP</h3>
+                        <span class="cart__price">Rs.6999</span>
+                        <div class="cart__amount">
+                            <div class="cart__amount-content">
+                                <span class="cart__amount-box">
+                                    <i class='bx bx-minus' onclick="handleMinus(this)" ></i>
+                                </span>
+                                <span class="cart__amount-number">1</span>
+                                <span class="cart__amount-box">
+                                    <i class='bx bx-plus' onclick="handlePlus(this)" ></i>
+                                </span>
+                            </div>
+                            <i class='bx bx-trash-alt cart__amount-trash' onclick="handleDelete(this)"></i>
+                        </div>
+                    </div>
+                </article>
+                <article class="cart__card">
+                    <div class="cart__box">
+                        <img src="assets/img/Infotenment System.jpg" alt="" class="cart__img">
+                    </div>
+                    <div class="cart__details">
+                        <h3 class="cart__title">INFOTENMENT<h3>
+                        <span class="cart__price">Rs.6599</span>
+                        <div class="cart__amount">
+                            <div class="cart__amount-content">
+                                <span class="cart__amount-box">
+                                    <i class='bx bx-minus' onclick="handleMinus(this)"></i>
+                                </span>
+                                <span class="cart__amount-number">1</span>
+                                <span class="cart__amount-box">
+                                    <i class='bx bx-plus' onclick="handlePlus(this)"></i>
+                                </span>
+                            </div>
+                            <i class='bx bx-trash-alt cart__amount-trash' onclick="handleDelete(this)"></i>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="cart__prices">
+                <span class="cart__prices-item">3 items</span>
+                <span class="cart__prices-total">Rs.15097</span>
+            </div>
+        </div>
+        <!-- MAIN -->
+        <main class="main">
+            <!-- HOME -->
+            <section class="home" id="home">
+                <div class="home__container container grid">
+                    <div class="home__img-bg">
+                        <img src="assets/img/Headlight.jpg" class="home__img">
+                    </div>
+                    <div class="home__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                            Facebook
+                        </a>
+                        <a href="" target="_blank" class="home__social-link">
+                            GearUpGarage
+                        </a>
+                        <a href="https://www.instagram.com/gear_up__garage?igsh=MWdmcjQ3a2pobzVteg==" target="_blank" class="home__social-link">
+                            Instagram
+                        </a>
+                    </div>
+                    <div class="home__data">
+                        <h1 class="home__title">GearUpGarage <br> Buy What You Love</h1>
+                        <p class="home__description">Platform to buy second hand vehicle parts at a better price.
+                            We give assurance of 100% original products which are tested by our experts. Just Live the way you Love.
+                        </p>
+                        <span class="home__price">HEADLIGHTS starting from ₹5000</span>
+                        <div class="home__btns">
+                            <a href="#" class="button button--gray button--small">
+                                Discover
+                            </a>
+                            <button class="button home__button"><a href="RearBumper.html" style="text-decoration:none;color:#fff;">DESCRIPTION</a></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--FEATURED-->
+            <section class="featured section container" id="featured">
+                <h2 class="section__title">
+                    Featured
+                </h2>
+                <div class="featured__container grid">
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+                        <img src="assets/img/Steering.jpg" alt="" class="featured__img">
+                        <div class="featured__data">
+                            <h3 class="featured__title">Suzuki Streeing</h3>
+                            <span class="featured__price">₹2999 </span>
+                        </div>
+                        <button class="button featured__button" onclick="handleDescription(this)">Description </button>
+                    </article>
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+                        <img src="assets/img/Infotenment System.jpg" alt="" class="featured__img">
+                        <div class="featured__data">
+                            <h3 class="featured__title">Infotainment System </h3>
+                            <span class="featured__price">₹6599</span>
+                        </div>
+                        <button class="button featured__button" onclick="handleDescription(this)">Description </button>
+                    </article>
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+                        <img src="assets/img/Gear knob.jpg" alt="" class="featured__img">
+                        <div class="featured__data">
+                            <h3 class="featured__title">Suzuki Gear Knob</h3>
+                            <span class="featured__price">₹1299</span>
+                        </div>
+                        <button class="button featured__button" onclick="handleDescription(this)">Description </button>
+                    </article>
+                </div>
+            </section>
+            <!--STORY-->
+            <section class="story section container">
+                <div class="story__container grid">
+                    <div class="story__data">
+                        <h2 class="section__title story__section-title">
+                            Our Story
+                        </h2>
+                        <h1 class="story__title">
+                            Inspirational Company of <br> this year
+                        </h1>
+                        <p class="story__description">We are a user-friendly online marketplace tailored specifically for vehicle parts seller looking to sell their used vehicle  and electronic parts to the specific buyers. The platform serves as Specializing in high-quality, pre-owned vehicle parts, the company reduces waste, extends vehicle lifespans, and offers cost-effective solutions. With a focus on innovation, ethical sourcing, and customer satisfaction
+                        </p>
+                        <a href="#" class="button button--small">Discover</a>
+                    </div>
+                    <div class="story__images">
+                        <img src="assets/img/suce.jpg" alt="" class="story__img">
+                        <div class="story__square"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- PRODUCTS -->
+            <section class="products section container" id="products">
+                <h2 class="section__title">
+                    Products
+                </h2>
+                <a href="RearBumper.html">
+                <div class="products__container grid">
+                    <article class="products__card">
+                        <img src="assets/img/rearlight.jpg" alt="" class="products__img">
+                        <h3 class="products__title">REAR LIGHT</h3>
+                        <span class="products__price">₹3999</span>
+                        <button class="products__button">
+                            <i class='bx bx-shopping-bag'></i>
+                        </button>
+                    </article>
+                </a>
+                    <a href="RearBumper.html">
+                    <article class="products__card">
+                        <img src="assets/img/rear bumper.jpg" alt="" class="products__img">
+                        <h3 class="products__title">REAR BUMPER</h3>
+                        <span class="products__price">₹6,350</span>
+                        <button class="products__button">
+                            <i class='bx bx-shopping-bag'></i>
+                        </button>
+                    </article></a>
+                    <a href="RearBumper.html">
+                    <article class="products__card">
+                        <img src="assets/img/onelap.jpg" alt="" class="products__img">
+                        <h3 class="products__title">ONE LAP GPS</h3>
+                        <span class="products__price">₹1499</span>
+                        <button class="products__button">
+                            <i class='bx bx-shopping-bag'></i>
+                        </button>
+                    </article></a>
+                    <a href="RearBumper.html">
+                    <article class="products__card">
+                        <img src="assets/img/wheel.jpg" alt="" class="products__img">
+                        <h3 class="products__title">ALTO WHEEL COVER</h3>
+                        <span class="products__price">₹4499</span>
+                        <button class="products__button">
+                            <i class='bx bx-shopping-bag'></i>
+                        </button>
+                    </article></a>
+                    <a href="RearBumper.html">
+                    <article class="products__card">
+                        <img src="assets/img/headlight (2).jpg" alt="" class="products__img">
+                        <h3 class="products__title">BREZZA FOG LAMP</h3>
+                        <span class="products__price">₹6999</span>
+                        <button class="products__button">
+                            <i class='bx bx-shopping-bag'></i>
+                        </button>
+                    </article></a>
+                </div>
+            </section>
+            <!-- MODAL--> 
+            <div class="modal-overlay" id="modalOverlay">
+                <div class="modal">
+                  <div class="modal-header">Description</div>
+                  <div class="modal-body">
+                    This is a sample description modal that opens in the center of the screen.
+                  </div>
+                  <div class="modal-footer">
+                    <button class="close-btn" id="closeModalBtn" onclick="handleClose()">Close</button>
+                  </div>
+                </div>
+              </div>  
+            <!--TESTIMONIAL-->
+            <section class="testimonial section container">
+                <div class="testimonial__container grid">
+                    <div class="swiper testimonial-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="testimonial__card swiper-slide">
+                                <div class="testimonial__quote">
+                                    <i class='bx bxs-quote-alt-left' ></i>
+                                </div>
+                                <p class="testimonial__description">
+                                    Our goal is to make reliable, eco-friendly auto parts available to everyone, helping customers maintain their vehicles without compromising on quality."
+                                </p>
+                                <h3 class="testimonial__date">October 12, 2024</h3>
+                                <div class="testimonial__perfil">
+                                    <img src="assets/img/Teamlogo.jpg" alt="" class="testimonial__perfil-img">
+        
+                                    <div class="testimonial__perfil-data">
+                                        <span class="testimonial__perfil-name">Team GearUpGarage</span>
+                                        <span class="testimonial__perfil-detail">Keshav Goel</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        <div class="swiper-button-next">
+                            <i class='bx bx-right-arrow-alt' ></i>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <i class='bx bx-left-arrow-alt' ></i>
+                        </div>
+                    </div>
+                    <div class="testimonial__images">
+                        <div class="testimonial__square"></div>
+                        <img src="assets/img/Teamlogo.jpg" alt="" class="testimonial__img">
+                    </div>
+                </div>
+            </section>
+            <!-- NEW -->
+            <section class="new section container" id="new">
+                <h2 class="section__title">
+                    New Arrivals
+                </h2>
+                <div class="new__container">
+                    <div class="swiper new-swiper">
+                        <div class="swiper-wrapper">
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">New</span>
+                                <img src="assets/img/Bmw Exaust.jpg" alt="" class="new__img">
+                                <div class="new__data">
+                                    <h3 class="new__title">Royal Enfield EXHAUST</h3>
+                                    <span class="new__price">₹35,180</span>
+                                </div>
+                                <button class="button new__button"><a href="RearBumper.html" style="text-decoration:none;color:#fff;">Description</a></button>
+                            </article>
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">New</span>
+                                <img src="assets/img/thar alloy.jpg" alt="" class="new__img">
+                                <div class="new__data">
+                                    <h3 class="new__title">THAR ALLOY</h3>
+                                    <span class="new__price">₹45,499</span>
+                                </div>
+                                <button class="button new__button"><a href="RearBumper.html" style="text-decoration:none;color:#fff;">Description</a></button>
+                            </article>
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">New</span>
+                                <img src="assets/img/LEGENDER KIT.jpg" alt="" class="new__img">
+                                <div class="new__data">
+                                    <h3 class="new__title">FORTUNER LEGENDER KIT</h3>
+                                    <span class="new__price">₹85,499</span>
+                                </div>
+                                <button class="button new__button"><a href="RearBumper.html" style="text-decoration:none;color:#fff;">Description</a></button> 
+                            </article> 
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">New</span>
+                                <img src="assets/img/range rover drls.jpg" alt="" class="new__img">
+                                <div class="new__data">
+                                    <h3 class="new__title">RANGE ROVER DRLS</h3>
+                                    <span class="new__price">₹12,999</span> 
+                                </div>
+                                <button class="button new__button"><a href="RearBumper.html" style="text-decoration:none;color:#fff;">Description</a></button>
+                            </article>                      
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- NEWSLETTER -->
+            <section class="newsletter section container">
+                <div class="newsletter__bg grid">
+                    <div>
+                        <h2 class="newsletter__title">Subscribe Our <br> Newsletter</h2>
+                        <p class="newsletter__description">
+                            Don't miss out on your discounts. Subscribe to our email 
+                            newsletter to get the best offers, discounts, coupons, 
+                            gifts and much more.
+                        </p>
+                    </div>
+                    <form action="" class="newsletter__subscribe">
+                        <input type="email" placeholder="Enter your email" class="newsletter__input">
+                        <button class="button">
+                            SUBSCRIBE
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <!-- FOOTER -->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <h3 class="footer__title">Our information</h3>
+                    <ul class="footer__list">
+                        <li>Ims Engineering College </li>
+                        <li>Dasna,Ghaziabad-201015</li>
+                        <li>Uttar Pradesh, India</li>
+                        <li>044-6171XXXXX</li>
+                    </ul>
+                </div>
+                <div class="footer__content">
+                    <h3 class="footer__title">About Us</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Support Center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Customer Support</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Copy Right</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__content">
+                    <h3 class="footer__title">Product</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Headlights</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Streeings</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Speakers</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Other Accesories</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__content">
+                    <h3 class="footer__title">Social</h3>
+                    <ul class="footer__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+                        <a href="" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-veltech' ></i>
+                        </a>
+                        <a href="https://www.instagram.com/gear_up__garage?igsh=MWdmcjQ3a2pobzVteg==" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-instagram' ></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <span class="footer__copy">&#169; GearUpGarage. All rigths reserved</span>
+        </footer>
+        <!-- SCROLL UP -->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+        </a>
+        <!-- SWIPER JS -->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!-- MAIN JS -->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
